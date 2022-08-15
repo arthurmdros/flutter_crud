@@ -1,0 +1,10 @@
+^D:\ARTHURMDROS\FACULDADE\CURSOS\FLUTTER\FLUTTER_CRUD\WINDOWS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/windows -BD:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows --check-stamp-file D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,9 @@
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/icudtl.dat
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/flutter_windows.dll
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/flutter_assets/AssetManifest.json
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/flutter_assets/FontManifest.json
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/flutter_assets/NOTICES
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/flutter_assets/NOTICES.Z
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+D:/arthurmdros/FACULDADE/CURSOS/FLUTTER/flutter_crud/build/windows/runner/Release/data/app.so
