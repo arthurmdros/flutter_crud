@@ -6,7 +6,7 @@ const DUMMY_USERS = {
     name: 'Maria',
     email: 'maria@alunos.com.br',
     avatarUrl:
-        'https://cdn.pixabay.com/photo/2020/04/15/17/32/medical-5047582_1280.png',
+        'https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png',
   ),
   '2': User(
     id: '2',
