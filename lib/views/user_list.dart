@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
+  const UserList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context){
     final Users users = Provider.of(context);
@@ -14,16 +16,27 @@ class UserList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Lista de usuários'),
-        actions: <Widget>[
-          IconButton(onPressed: (){
-            Navigator.of(context).pushNamed(AppRoutes.USER_FORM);
-          }, icon: Icon(Icons.add))
+        title: const Text('Lista de usuários'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                AppRoutes.USER_FORM,
+                arguments: const User(
+                  id: '',
+                  name: '',
+                  email: '',
+                  avatarUrl: '',
+                ),
+              );
+            },
+          )
         ],
       ),
       body: ListView.builder(
         itemCount: users.count,
-        itemBuilder: (ctx, i) => UserTile(users.all.elementAt(i)),
+        itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
       ),
     );
   }
