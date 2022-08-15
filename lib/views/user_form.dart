@@ -3,12 +3,34 @@ import 'package:crud/provider/users_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class UserForm extends StatelessWidget {
+class UserForm extends StatefulWidget {
 
+  const UserForm({Key? key}) : super(key: key);
+
+  @override
+  State<UserForm> createState() => _UserFormState();
+}
+
+class _UserFormState extends State<UserForm> {
   final _form = GlobalKey<FormState>();
   final Map<String, String> _formData = {};
+
+  void _loadFormData(User user){
+    if(user != null){
+      _formData['id'] = user.id!;
+      _formData['name'] = user.name;
+      _formData['email'] = user.email;
+      _formData['avatarUrl'] = user.avatarUrl;
+    }
+  }
   
-  UserForm({Key? key}) : super(key: key);
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    final user = ModalRoute.of(context)?.settings.arguments as User;
+    _loadFormData(user);
+  }
 
   @override
   Widget build(BuildContext context){    
@@ -31,7 +53,7 @@ class UserForm extends StatelessWidget {
                 Navigator.of(context).pop();
               }
             }, 
-            icon: Icon(Icons.save))
+            icon: const Icon(Icons.save))
         ],
       ),
       body: Padding(
@@ -41,6 +63,7 @@ class UserForm extends StatelessWidget {
           child: Column(
             children: [
               TextFormField(
+                initialValue: _formData['name'],
                 decoration: InputDecoration(labelText: 'Nome'),
                 validator: (value) {
                   if(value == null || value.trim().isEmpty){
@@ -48,14 +71,16 @@ class UserForm extends StatelessWidget {
                   }
                   return null;
                 },
-                onSaved: (value) => _formData['name'] = value.toString(),
+                onSaved: (value) => _formData['name'] = value!,
               ),
               TextFormField(
+                initialValue: _formData['email'],
                 decoration: InputDecoration(labelText: 'E-mail'),
-                onSaved: (value) => _formData['email'] = value.toString(),),
+                onSaved: (value) => _formData['email'] = value!,),
               TextFormField(
+                initialValue: _formData['avatarUrl'],
                 decoration: InputDecoration(labelText: 'URL do avatar'),
-                onSaved: (value) => _formData['avatarUrl'] = value.toString(),)
+                onSaved: (value) => _formData['avatarUrl'] = value!,)
             ],
           )
         ),),
